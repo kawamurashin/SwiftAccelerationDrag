@@ -16,12 +16,21 @@ class ViewController: UIViewController{
         // Do any additional setup after loading the view, typically from a nib.
         var card:DragCard = DragCard();
         card.userInteractionEnabled = true;
+        
+        
 
         self.view.addSubview(card)
         
         var panGestureRecgniser:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panGestureSelector:")
+        
         panGestureRecgniser.minimumNumberOfTouches = 1;
         card.addGestureRecognizer(panGestureRecgniser);
+        
+        var tapGestureRecogniser:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGestureSelector:")
+        tapGestureRecogniser.cancelsTouchesInView = false
+        card.addGestureRecognizer(tapGestureRecogniser)
+        
+        
         
         cardList.append(card);
         
@@ -37,35 +46,55 @@ class ViewController: UIViewController{
         var card:DragCard!;
         var i = 0;
         var n = 0;
+        var point:CGPoint!;
         //
         n = cardList.count;
         for(i=0 ; i<n;i++)
         {
-            card = cardList[i];
-            
+            card = cardList[i]
+            if(card.isDrag)
+            {
+                
+            }
+            else
+            {
+                card.autoMove();
+            }
         }
     }
 
     func panGestureSelector(sender:UIPanGestureRecognizer)
     {
+        var card:DragCard! = sender.view as DragCard;
+        
         if(sender.state == .Ended)
         {
-            println(".End")
+           // println(".End")
+            card.isDrag = false;
         }
         else if(sender.state == .Began)
         {
-            println(".Began")
+            //println(".Began")
+            card.isDrag = true;
         }
         else
         {
-            println("そのた")
+            //println("そのた")
+            var point:CGPoint = sender.translationInView(self.view);
+            var movePoint:CGPoint = CGPointMake(card.center.x + point.x , card.center.y + point.y);
+            card.center = movePoint;
+            sender.setTranslation(CGPointZero, inView: card)
         }
-        var card:DragCard! = sender.view as DragCard;
-        var point:CGPoint = sender.translationInView(self.view);
-        var movePoint:CGPoint = CGPointMake(card.center.x + point.x , card.center.y + point.y);
-        card.center = movePoint;
-        
-        sender.setTranslation(CGPointZero, inView: card)
+    }
+    func tapGestureSelector(sender:UIPanGestureRecognizer)
+    {
+        println("tap");
+        var card:DragCard = sender.view as DragCard
+        if(sender.state == .Began)
+        {
+            println("はじめ")
+        }
+        card.isDrag = true;
     }
 }
 
