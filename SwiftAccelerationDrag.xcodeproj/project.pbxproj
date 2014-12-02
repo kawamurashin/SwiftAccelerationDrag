@@ -13,6 +13,9 @@
 		543B49AA1A2D6730004FF725 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543B49A91A2D6730004FF725 /* Images.xcassets */; };
 		543B49AD1A2D6730004FF725 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 543B49AB1A2D6730004FF725 /* LaunchScreen.xib */; };
 		543B49B91A2D6730004FF725 /* SwiftAccelerationDragTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B49B81A2D6730004FF725 /* SwiftAccelerationDragTests.swift */; };
+		543B49C31A2D68B3004FF725 /* DragCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B49C21A2D68B3004FF725 /* DragCard.swift */; };
+		543B49C51A2D6A3F004FF725 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 543B49C41A2D6A3F004FF725 /* image.jpg */; };
+		543B49C71A2D6E88004FF725 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B49C61A2D6E88004FF725 /* CardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		543B49B21A2D6730004FF725 /* SwiftAccelerationDragTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAccelerationDragTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		543B49B71A2D6730004FF725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		543B49B81A2D6730004FF725 /* SwiftAccelerationDragTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAccelerationDragTests.swift; sourceTree = "<group>"; };
+		543B49C21A2D68B3004FF725 /* DragCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragCard.swift; path = ../DragCard.swift; sourceTree = "<group>"; };
+		543B49C41A2D6A3F004FF725 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		543B49C61A2D6E88004FF725 /* CardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 		543B499F1A2D6730004FF725 /* SwiftAccelerationDrag */ = {
 			isa = PBXGroup;
 			children = (
+				543B49C61A2D6E88004FF725 /* CardManager.swift */,
+				543B49C21A2D68B3004FF725 /* DragCard.swift */,
 				543B49A21A2D6730004FF725 /* AppDelegate.swift */,
 				543B49A41A2D6730004FF725 /* ViewController.swift */,
 				543B49A61A2D6730004FF725 /* Main.storyboard */,
@@ -90,6 +98,7 @@
 		543B49A01A2D6730004FF725 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				543B49C41A2D6A3F004FF725 /* image.jpg */,
 				543B49A11A2D6730004FF725 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,6 +204,7 @@
 				543B49A81A2D6730004FF725 /* Main.storyboard in Resources */,
 				543B49AD1A2D6730004FF725 /* LaunchScreen.xib in Resources */,
 				543B49AA1A2D6730004FF725 /* Images.xcassets in Resources */,
+				543B49C51A2D6A3F004FF725 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				543B49A51A2D6730004FF725 /* ViewController.swift in Sources */,
+				543B49C71A2D6E88004FF725 /* CardManager.swift in Sources */,
 				543B49A31A2D6730004FF725 /* AppDelegate.swift in Sources */,
+				543B49C31A2D68B3004FF725 /* DragCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
